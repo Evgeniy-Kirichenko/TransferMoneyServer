@@ -50,8 +50,8 @@ public class ServiceMoney {
                 final String confirmationCode = String.valueOf((int) Math.random() * 56898);
                 repository.saveTransfers(operationId, request);
                 repository.saveCode(operationId, confirmationCode);
-                log.info("Новый перевод: Id {}, CardFrom № {}, CardTo № {}, amount {}, currency {}",
-                        operationId,cardFromNumber,cardToNumber,amount.getValue(),amount.getCurrency());
+                log.info("Новый перевод: Id {}, CardFrom № {}, CardTo № {}, amount {}, currency {}, comission {}",
+                        operationId,cardFromNumber,cardToNumber,amount.getValue(),amount.getCurrency(), amount.getValue()/100);
                 return new ResponseOk(operationId);
             } else throw new ErrorTransferException("Недостаточно средств на карте");
         } else throw new ErrorInputDataException("Карта не найдена");
