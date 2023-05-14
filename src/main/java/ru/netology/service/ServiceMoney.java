@@ -156,7 +156,7 @@ public class ServiceMoney {
 
     //тестовая карта сохраняется в cards
     public void initCardTest() {
-        final Card testCard = new Card("1111354545445422", "01/28", "345", new Amount(15000, "RUB"));
+        final Card testCard = new Card("1111354545445422", "01/28", "345", new Amount(1500000, "RUB"));
         repository.saveCard(testCard.getCardNumber(), testCard);
     }
 }
